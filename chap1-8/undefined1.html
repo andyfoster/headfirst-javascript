@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Undefined One</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    var header = document.getElementById('header');
+
+    if (header == null) {
+      console.log('Something is seriously wrong! There is no header!');
+    } else {
+      console.log('There is a header. All ok.');
+    }
+      var customer = {
+        name: "John"
+      };
+
+      if (customer.phoneNumber == undefined) {
+        console.log('x is undefined');
+      } else {
+        console.log('x has been defined');
+      }
+    </script>
+  </body>
+</html>

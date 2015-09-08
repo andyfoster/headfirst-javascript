@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+-->
+<html>
+	<head beard="true">
+		<meta charset="utf-8">
+		<title>Is Unfocused busy yet?</title>
+		<style>
+			body {
+				text-align: center;
+			}
+			h1 {
+				font-size: 100px;
+				font-family: Helvetica, Arial, sans-serif;
+				text-shadow: #000 0 0 3px;
+			}
+			#twitter {
+				text-decoration: none;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+			}
+			#twitter > img {
+				filter: grayscale(100%) blur(1px);
+				-webkit-filter: grayscale(100%) blur(1px);
+				transition: filter 0.5s ease-in;
+				transition: -webkit-filter 0.5s ease-in;
+			}
+			#twitter:hover > img {
+				filter: grayscale(0%) blur(0px);
+				-webkit-filter: grayscale(0%) blur(0px);
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1 id="message">Nope! Taking a break</h1>
+
+		<a id="twitter" href="https://twitter.com/theunfocused">
+			<img src="twitter.png">
+		</a>
+	</body>
+
+	<script>
+		console.log("Busy stroking my beard.");
+		var expect = [38,38,40,40,37,39,37,39,66,65];
+		var give = [73,115,32,105,116,32,77,70,66,84,32,121,101,116,63,32,89,101,115,33];
+		document.addEventListener("keyup", function(event) {
+			if (expect.length && expect[0] == event.keyCode) {
+				expect.shift();
+				if (!expect.length) {
+					var messageElement = document.getElementById("message");
+					messageElement.textContent = String.fromCharCode.apply(null, give);
+				}
+			}
+		});
+	</script>
+<!--
+AFAIK, this was the first^Wsecond^Wthird^Wforth file (first HTML file, second project-thingy) to ever be licensed under MPL 2.0.
+Dated 12/1/2012 (NZDT) - exactly 3 years after I joined Mozilla.
+Stay bearded.
+- Unfocused
+-->
+</html>

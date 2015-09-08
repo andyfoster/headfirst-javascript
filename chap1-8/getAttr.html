@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Grab attribute value with JS</title>
+    <script>
+    function init(){
+      var image = document.getElementById('img1');
+      var altText = image.getAttribute('alt');
+      image.setAttribute("class", "redtext");
+      image.setAttribute("src", "working.jpg");
+      if (altText == null) {
+        console.log('No alt text to display');
+      } else {
+        console.log(altText);
+      }
+    }
+    window.onload = init;
+    </script>
+
+  </head>
+  <body>
+    <img src="broken.jpg" alt="This is my alt text" id="img1">
+  </body>
+</html>

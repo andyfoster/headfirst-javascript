@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>  </title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function addN(n) {
+        var adder = function (x) {
+                      return n + x;
+        };
+        return adder;
+      }
+
+      var twoer = addN(2);
+      var plusThree = addN(3);
+      console.log(twoer(5));
+      console.log(plusThree(7));
+    </script>
+  </body>
+</html>

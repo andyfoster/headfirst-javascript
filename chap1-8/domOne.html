@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DOM One</title>
+    <script>
+
+    function init(){
+      var planet = document.getElementById('page-link');
+      // planet.innerHTML = "How are you";
+      console.log(planet.outerHTML);
+      planet.outerHTML = '<a href="http://www.badsite.com/" id="page-link">I\'m a bad link</a>';
+      // planet.innerHTML = "You've been hacked!";
+
+    }
+    // make sure you din't use () after the function name
+    // we're assigning the
+    window.onload = init;
+    </script>
+  </head>
+  <body>
+    <p id="green">
+      <a href="http://www.yahoo.com/" id="page-link">Hello</a>
+    </p>
+
+
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+    var i = ["a", "b", "c", "a", "c"];
+
+
+    function countLetters(input) {
+      var newLetters = [];
+      for (var i = 0; i < input.length; i++) {
+        console.log(input[i]);
+        if (newLetters.indexOf(input[i]) < 0) {
+          newLetters.push(input[i]);
+        }
+      }
+      return newLetters.length;
+    }
+
+    console.log(countLetters(i));
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

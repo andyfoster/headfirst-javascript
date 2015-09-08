@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Undefined One</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    // var str = "food" * 100;
+    // var str = Math.sqrt(-9);
+    var str = 10/0;
+
+    if (str == Infinity) {
+      console.log('You\'re trying to count to infinity there');
+    }
+
+      var probe = typeof(str);
+
+      console.log(probe);
+      console.log(str);
+
+      console.log(isNaN(str));
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Validate Phone Number</title>
+  </head>
+  <body>
+    <script>
+
+      function validate(number) {
+        if (number.length != 7 && number.length != 8) {
+          return false;
+        }
+        for (var i = 0; i < number.length; i++) {
+          if (number[i] === "-") {
+              if (i != 3) {
+                if (i != 4) {
+                  return false;
+                }
+              }
+          } else {
+            if (isNaN(number[i])) {
+              return false;
+            }
+          }
+
+        }
+        return true;
+      }
+
+      console.log(validate("123443367"));
+    </script>
+  </body>
+</html>
+<!-- <script>
+  function validate(number){
+    if (number.length != 8){
+      return false;
+    }
+    for (var i = 0; i < number.length; i++){
+      if (i === 3) {
+        if (number.substring(3,4) != "-") {
+          return false;
+        }
+      } else if (isNaN(number.charAt(i))) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  console.log(validate("123-4567"));
+</script> -->

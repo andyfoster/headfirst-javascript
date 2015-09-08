@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+    var Constants = {
+      INVALID_VALUE_MSG: 'Invalid value!',
+      INVALID_VALUE_URL: '/errors/invalid.php'
+    };
+
+    function validate(value) {
+      if (!value) {
+        alert(Constants.INVALID_VALUE_MSG);
+        location.href = Constants.INVALID_VALUE_URL;
+      }
+    }
+
+    </script>
+  </body>
+</html>

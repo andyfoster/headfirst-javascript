@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>  </title>
+  </head>
+  <body>
+      <script type="text/javascript">
+      // This is called a function expression
+        var fly = function(num) {
+          for (var i = 0; i < num; i++) {
+            console.log("Flying" + i);
+          }
+        };
+
+        // Compare with "function declaration"
+        // These are gathered up on the browser's first pass
+        // over the page
+        //
+        // function fly(num) {
+        //   ...
+        // }
+        fly(4);
+      </script>
+  </body>
+</html>

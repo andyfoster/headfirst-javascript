@@ -1,0 +1,95 @@
+<h1 id="header">My name is John</h1>
+
+<script>
+
+var space = document.getElementById("header");
+var code = space.innerHTML;
+console.log("space" + space);
+
+alert(code);
+code = "Hi";
+exit;
+var taxi = {
+  make: "Webville Motors",
+  model: "Taxi",
+  year: 1955,
+  color: "yellow",
+  passengers: 4,
+  convertible: false,
+  mileage: 281341,
+  started: false,
+  fuel: 0,
+  start: function() {
+    if (this.fuel == 0) {
+      alert("No fuel! Top up, mate!");
+    } else {
+      this.started = true;
+    }
+  },
+  stop: function() {
+    this.started = false;
+    alert("Good trip, you have " + this.fuel + " fuel left");
+  },
+  drive: function() {
+    if (this.started) {
+      if (this.fuel > 0) {
+        alert('Zoom zoom!');
+        this.fuel--;
+      } else {
+        alert('Uh oh, no fuel!');
+        this.stop;
+      }
+    } else {
+      alert("You need to start the engine first");
+    }
+  },
+  addFuel: function(amount) {
+    this.fuel = this.fuel + amount;
+    console.log("Added " + amount + " litres of fuel");
+  }
+};
+
+  function prequalify(car) {
+    if (car.year > 1960) {
+      return false;
+    } else if (car.mileage > 10000) {
+      return false;
+    }
+    return true;
+  }
+
+taxi.drive();
+taxi.addFuel(1);
+taxi.start();
+taxi.drive();
+taxi.stop();
+taxi.start();
+taxi.drive()
+taxi.addFuel(1);
+taxi.start();
+
+taxi.drive();
+taxi.drive();
+taxi.addFuel(3);
+taxi.start();
+
+taxi.drive();
+taxi.drive();
+taxi.drive();
+taxi.drive();
+taxi.drive();
+taxi.drive();
+
+
+
+// var okCar = prequalify(taxi);
+
+// if (okCar) {
+//   console.log('Go ahead on that ' + taxi.make + " " + taxi.model);
+// } else {
+//   console.log("Pass on that " + taxi.model);
+// }
+
+
+
+</script>

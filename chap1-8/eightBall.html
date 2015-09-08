@@ -1,0 +1,32 @@
+<script>
+  var eightBall = {
+    index: 0,
+    advice: ["yes", "no", "maybe", "not a chance"],
+    shuffle: function(){
+      var random = Math.floor(Math.random() * this.advice.length);
+      return this.advice[random];
+    },
+    shake: function() {
+      this.index = this.index + 1;
+      if (this.index >= this.advice.length) {
+        this.index = 0;
+      }
+    },
+
+    look: function() {
+      return this.advice[this.index];
+    }
+  };
+
+  for (var prop in eightBall) {
+    console.log(prop +" is equal to " + eightBall[prop]);
+  }
+
+  console.log(eightBall.shuffle());
+
+//  eightBall.shake();
+  eightBall.shake();
+  console.log(eightBall.look());
+
+
+</script>

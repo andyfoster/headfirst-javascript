@@ -1,0 +1,23 @@
+<script>
+  var str = "Hello";
+
+  function lengthOfInput(input) {
+    var counter = 0;
+    for (i in input) {
+      counter++;
+    }
+    return counter;
+  }
+
+  function reverseString(string) {
+    var newString;
+    var newArray = string.split("");
+    var reversedArray = newArray.reverse();
+
+    return reversedArray.join("");
+
+  }
+
+
+  console.log(reverseString(str));
+</script>

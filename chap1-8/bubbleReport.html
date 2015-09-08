@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      var scores = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 48, 69, 34, 55, 51, 52, 44, 51, 69, 64, 66, 55, 52, 61, 46, 31, 57, 52, 44, 18, 41, 53, 55, 61, 51, 44];
+
+      var costs = [.25, .27, .25, .25, .25, .25, .33, .31, .25, .29, .27, .22, .31, .25, .25, .33, .21, .25, .25, .25, .28, .25, .24, .22, .20, .25, .30, .25, .24, .25,
+      .25, .25, .27, .25, .26, .29];
+
+      // printAndGetHighScore(scores);
+
+      function printAndGetHighScore(inputArray) {
+
+        var output;
+        var topScore = 0;
+
+        for (var i = 0; i < inputArray.length; i++){
+
+            output = "Bubble Solution " + i + " is: " + inputArray[i] + " and costs $" + costs[i];
+            console.log(output);
+
+
+            if (inputArray[i] > topScore){
+              topScore = inputArray[i];
+            }
+        }
+        return topScore;
+      }
+
+      var topScore = printAndGetHighScore(scores);
+
+      console.log("Bubbles tests: " + scores.length);
+      console.log("The top score was: " + topScore);
+
+      var bestSolutions = getBestResults(scores, topScore);
+
+      function getBestResults(inputArray, topScore) {
+        var bestSolutions = [];
+
+        for (var i = 0; i < inputArray.length; i++){
+          if (inputArray[i] == topScore) {
+            // bestSolutions.push(i);
+            bestSolutions[bestSolutions.length] = i; // no push
+          }
+        }
+        console.log("The best bubbles were: " + bestSolutions);
+        return bestSolutions;
+      }
+
+      getMostCostEffectiveBubble(bestSolutions, costs);
+
+
+
+      function getMostCostEffectiveBubble(bestSolutionsArray, costArray) {
+
+        var cheapestBubble = 100;
+        var cheapestIndex;
+
+        // checks each of the bubbles that was the best
+        for (var i = 0; i < bestSolutionsArray.length ; i++){
+
+          if (costArray[bestSolutionsArray[i]] < cheapestBubble){
+            cheapestBubble = costArray[bestSolutionsArray[i]];
+            cheapestIndex = bestSolutionsArray[i];
+          }
+        }
+        console.log("cheapestBubble is " + cheapestBubble + " which is " + cheapestIndex);
+      }
+
+      function getMostCostEffectiveSolution(score, costs, highscore) {
+        var cost =100;
+        var index;
+
+        for (var i = 0; i < scores.length; i++){
+          if(score[i] == highscore){
+            if (cost > costs[i]) {
+              index = i
+              cost = costs[i];
+            }
+          }
+        }
+        return index;
+      }
+
+      // getMostCostEffectiveSolution(scores, costs, highscore);
+
+    </script>
+  </body>
+</html>

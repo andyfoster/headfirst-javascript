@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Duck Sound</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Duck(sound) {
+        this.sound = sound;
+        this.quack = function() {
+          console.log(this.sound);
+        }
+      }
+      var toy = new Duck("quack quack");
+
+      toy.quack();
+
+      console.log(typeof toy);
+      console.log(toy instanceof Duck);
+    </script>
+  </body>
+</html>

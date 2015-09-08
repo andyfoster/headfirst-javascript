@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+    function fun(echo) {
+      console.log(echo);
+    }
+
+    console.log("1: ");
+    fun("hello");
+
+    console.log("2: ");
+    function boo(aFunction) {
+      aFunction("boo");
+    }
+    boo(fun);
+
+    console.log("3: ");
+    console.log(fun);
+
+    console.log("4: ");
+    fun(boo);
+
+    console.log("5: ");
+    var moreFun = fun;
+    moreFun("Hello again");
+
+    console.log("6: ");
+    function echoMaker() {
+      return fun;
+    }
+    var bigFun = echoMaker();
+    bigFun("Is there an echo?")
+
+
+    </script>
+  </body>
+</html>
