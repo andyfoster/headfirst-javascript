@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      body { margin: 20px; }
+      img {
+        margin: 20px;
+        height: 100px;
+        width: 100px;
+      }
+    </style>
+    <script>
+      function pageLoadedHandlerSlashCallback() {
+        alert("I'm alive!")
+      }
+      window.onload = pageLoadedHandlerSlashCallback;
+      window.onload = init;
+
+
+      function init() {
+        // var blurred = document.getElementById("blur");
+        // blurred.onmouseover =  showAnswer;
+        // blurred.onmouseout = showBlur;
+
+        var images = document.getElementsByTagName('img');
+        for (var i = 0; i < images.length; i++) {
+          images[i].onmouseover = showAnswer;
+        }
+      }
+
+      function showAnswer(eventObj) {
+        var image = eventObj.target;
+        var name = image.id;
+        name = name + ".jpg";
+        image.src = name;
+        var rando = Math.floor(Math.random() * 3000);
+        setTimeout(blurAnswer, rando, image);
+        // setTimeout(function(){ alert("Hello"); }, 3000);
+      }
+
+      function blurAnswer(image) {
+        var name = image.id;
+        name = name + "blur.jpg";
+        image.src = name;
+
+      }
+
+    </script>
+  </head>
+  <body>
+    <img src="zeroblur.jpg" id="zero">
+    <img src="oneblur.jpg" id="one">
+    <img src="twoblur.jpg" id="two">
+    <img src="threeblur.jpg" id="three">
+    <img src="fourblur.jpg" id="four">
+    <img src="fiveblur.jpg" id="five">
+  </body>
+</html>

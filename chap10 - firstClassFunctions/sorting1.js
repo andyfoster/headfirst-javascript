@@ -8,6 +8,11 @@ function compareNumbers(num1, num2) {
   }
 }
 
+// A much shorter way to write the compare function above!!
+function c(num1, num2) {
+  return num1 - num2;
+}
+
 
 function compareNumbersDesc(num1, num2) {
   if (num1 < num2) {

@@ -10,16 +10,25 @@ var products = [ { name: "Grapefruit", calories: 170, color: "red", sold: 8200 }
 
 
 
-  function compareSold(colaA, colaB) {
+function compareSold(colaA, colaB) {
+  return colaA.sold - colaB.sold;
+}
 
-      if (colaA.sold > colaB.sold) {
-        return 1;
-      } else if (colaA.sold === colaB.sold) {
-        return 0;
-      } else {
-        return -1;
-      }
-  }
+
+function compareSoldDesc(colaA, colaB) {
+  return colaB.sold - colaA.sold;
+}
+
+  // function compareSold(colaA, colaB) {
+  //     if (colaA.sold > colaB.sold) {
+  //       return 1;
+  //     } else if (colaA.sold === colaB.sold) {
+  //       return 0;
+  //     } else {
+  //       return -1;
+  //     }
+  // }
+
 
   function compareName(colaA, colaB) {
     if (colaA.name > colaB.name) {
@@ -31,15 +40,22 @@ var products = [ { name: "Grapefruit", calories: 170, color: "red", sold: 8200 }
     }
   }
 
+
+// This is also way shorter than the version below
   function compareCalories(colaA, colaB) {
-    if (colaA.calories > colaB.calories) {
-      return 1;
-    } else if (colaA.calories === colaB.calories) {
-      return 0;
-    } else {
-      return -1;
-    }
-  }
+    return colaA.calories - colaB.calories;
+}
+  // function compareCalories(colaA, colaB) {
+  //   if (colaA.calories > colaB.calories) {
+  //     return 1;
+  //   } else if (colaA.calories === colaB.calories) {
+  //     return 0;
+  //   } else {
+  //     return -1;
+  //   }
+  // }
+
+
 
   function compareColor(colaA, colaB) {
     if (colaA.color > colaB.color) {
@@ -69,6 +85,15 @@ printProducts(products);
 
 // BY Name  //
 console.log('--');
+
+// By number sold
+console.log('SOLD (DESCENDING):');
+products.sort(compareSoldDesc);
+printProducts(products);
+
+// BY Name  //
+console.log('--');
+
 console.log('NAME:');
 products.sort(compareName);
 printProducts(products);
