@@ -1,0 +1,16 @@
+
+function printArgs() {
+  for (var i = 0; i < arguments.length; i++) {
+    console.log(arguments[i]); }
+}
+
+printArgs("one", 2, 1+2, "four");
+
+
+function emote(kind) {
+if (kind === "silence") {
+  console.log("Player sits in silence"); } else if (kind === "says") {
+  console.log("Player says: '" + arguments[1] + "'"); }
+}
+emote("silence");
+emote("says", "Stand back!");

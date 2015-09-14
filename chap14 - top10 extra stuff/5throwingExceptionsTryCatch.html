@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Try Catch</title>
+  </head>
+  <body>
+    <div id="message"></div>
+    <script>
+      // window.onload = function(){
+      //   var message = document.getElementById('messge');
+      //   message.innerHTML = "Here's the message";
+      // };
+
+      window.onload = function(){
+        try {
+          var message = document.getElementById('messge');
+          message.innerHTML = "Here's the message";
+        } catch (error) {
+          console.log("Error! " + error.message);
+        }
+      };
+    </script>
+  </body>
+</html>
